@@ -1,0 +1,2175 @@
+{
+"TestIpmi15AuthNone":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI 1.5 authentication type NONE",
+		"testType":"IPMI",
+		"testmethod":"doIPMI15Auth",
+		"authType":"NONE"
+	},
+
+"TestIpmi15AuthMD2":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI 1.5 authentication type MD2",
+		"testType":"IPMI",
+		"testmethod":"doIPMI15Auth",
+		"authType":"MD2"
+	},
+
+"TestIpmi15AuthMD5":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI 1.5 authentication type MD5",
+		"testType":"IPMI",
+		"testmethod":"doIPMI15Auth",
+		"authType":"MD5"
+	},
+
+"TestIpmi15AuthPassword":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI 1.5 authentication type password",
+		"testType":"IPMI",
+		"testmethod":"doIPMI15Auth",
+		"authType":"PASSWORD"
+	},
+
+"TestIpmi20AuthRakpNone":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI 2.0 authentication type RAKP-None",
+		"testType":"IPMI",
+		"testmethod":"doIPMI20Auth",
+		"authType":"0"
+	},
+
+"TestIpmi20AuthRakpHmacSha1":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI 2.0 authentication type RAKP-HMAC-SHA1",
+		"testType":"IPMI",
+		"testmethod":"doIPMI20Auth",
+		"authType":"1"
+	},
+
+"TestIpmi20AuthHmacSha1_96":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI 2.0 authentication type HMAC-SHA1-96",
+		"testType":"IPMI",
+		"testmethod":"doIPMI20Auth",
+		"authType":"2"
+	},
+
+"TestIpmi20AuthAesCbc128":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI 2.0 authentication type AES-CBC-128",
+		"testType":"IPMI",
+		"testmethod":"doIPMI20Auth",
+		"authType":"3"
+	},
+
+"ShowMcInfo":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line mc info",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LAN",
+		"cmd":"mc info"
+	},
+
+"ShowMcInfo_Lanplus":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line mc info via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LANPLUS",
+		"cmd":"mc info"
+	},
+
+"GetDeviceID":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get device ID with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x01",
+		"expectResult":"20 81 03 15 02 bf f2 1b 00 0a 31 01 00 00 00",
+		"RQ750_expectResult":"20 81 03 15 02 bf f2 1b 00 0a 31 01 00 00 00",
+		"AAHA0B0_expectResult":"20 81 03 15 02 bf f2 1b 00 0a 31 01 00 00 00",
+		"ODIN_expectResult":"20 00 00 00 02 bf 66 4a 00 43 01"
+	},
+
+"GetDeviceID_Lanplus":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get device ID via lanplus interface with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LANPLUS",
+		"netfn":"0x06",
+		"cmd":"0x01",
+		"expectResult":"20 81 03 15 02 bf f2 1b 00 0a 31 01 00 00 00",
+		"RQ750_expectResult":"20 81 03 15 02 bf f2 1b 00 0a 31 01 00 00 00",
+		"AAHA0B0_expectResult":"20 81 03 15 02 bf f2 1b 00 0a 31 01 00 00 00",
+		"ODIN_expectResult":"20 00 00 00 02 bf 66 4a 00 43 01"
+	},
+
+"TestColdReset":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command cold reset",
+		"testType":"MANUAL"
+	},
+
+"TestColdResetCml":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command line mc reset cold",
+		"testType":"MANUAL"
+	},
+
+"ShowMcSelftest":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line mc selftest",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LAN",
+		"cmd":"mc selftest"
+	},
+
+"ShowMcSelftest_Lanplus":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line mc selftest via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LANPLUS",
+		"cmd":"mc selftest"
+	},
+
+"GetSelfTestResults":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get self test results with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x04",
+		"expectResult":"55 00"
+	},
+
+"GetSelfTestResults_Lanplus":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get self test results with expect Result via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LANPLUS",
+		"netfn":"0x06",
+		"cmd":"0x04",
+		"expectResult":"55 00"
+	},
+
+"GetAcpiPowerState":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command get ACPI power state",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x07"
+	},
+
+"GetAcpiPowerState_Lanplus":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command get ACPI power state via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LANPLUS",
+		"netfn":"0x06",
+		"cmd":"0x07"
+	},
+
+"GetDeviceGuid":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command get Device GUID",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x08"
+	},
+
+"GetDeviceGuid_Lanplus":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command get Device GUID via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LANPLUS",
+		"netfn":"0x06",
+		"cmd":"0x08"
+	},
+
+"GetNetFnSupportChannel1":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get NetFn support on channel 0x01 with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x09 0x01",
+		"expectResult":"02 6f 00 40 63 00 00 00 00 00 00 00 00 00 00 00 00",
+		"RQ750_expectResult":"02 6f 00 40 63 00 00 00 00 00 00 00 00 00 00 00 00",
+		"AAHA0B0_expectResult":"02 6f 00 40 63 00 00 00 00 00 00 00 00 00 00 00 00",
+		"ODIN_expectResult":"12 7d 00 80 21 00 00 00 00 7f 00 c0 ff 00 00 00 00"
+	},
+
+"GetCmdSupportChannel1NetFn6":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get command support on channel 0x01, NetFn 0x06 with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x0a 0x01 0x06 0x00",
+		"expectResult":"01 c0 ff ff cb 3f 00 40 00 00 0a fc ec ff ff ff",
+		"RQ750_expectResult":"01 c0 ff ff cb 3f 00 40 00 00 0a fc ec ff ff ff",
+		"AAHA0B0_expectResult":"01 c0 ff ff cb 3f 00 40 00 00 0a fc ec ff ff ff",
+		"ODIN_expectResult":"49 c0 ff ff cb 7f 6f 40 00 00 8a fc e0 ff ff ff"
+	},
+
+"GetCmdSubFnSupportChannel1NetFn6Cmd1":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get command sub-function support on channel 0x01, NetFn 0x06, CMD 0x01 with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x0b 0x01 0x06 0x00 0x01",
+		"expectResult":" 04 20 10 ff ff ff ff",
+		"RQ750_expectResult":" 04 20 10 ff ff ff ff",
+		"AAHA0B0_expectResult":" 04 20 10 ff ff ff ff",
+		"ODIN_expectResult":"00 20 10 00 00 00 00"
+	},
+
+"GetConfigurableCmdsChannel1NetFn6":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get configurable commands on channel 0x01, NetFn 0x06 with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x0c 0x01 0x06 0x00",
+		"expectResult":"00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+		"RQ750_expectResult":"00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+		"AAHA0B0_expectResult":"00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+		"ODIN_expectResult":"be 3f 00 00 34 80 50 b1 ff ff f5 02 1a 00 00 00"
+	},
+
+"GetConfigurableCmdSubFnsChannel1NetFn6Cmd1":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get configurable command sub-functions on channel 0x01, NetFn 0x06, CMD 0x01 with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x0d 0x01 0x06 0x00 0x01",
+		"expectResult":"00 00 00 00",
+		"RQ750_expectResult":"00 00 00 00",
+		"AAHA0B0_expectResult":"00 00 00 00",
+		"ODIN_expectResult":"00 00 00 00"
+	},
+
+"SetCmdEnablesChannel1NetFn0":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set command enables on channel 0x01, NetFn 0x00",
+		"testType":"IPMI",
+		"testmethod":"doSetCmdCheckRecover",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x60 0x01 0x00 0x00",
+		"data":"0xf7 0x8b 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00",
+		"getCmd":"0x61 0x01 0x00 0x00"
+	},
+
+"GetCmdEnablesChannel1NetFn0":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get command enables on channel 0x01, NetFn 0x00 with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x61 0x01 0x00 0x00",
+		"expectResult":"f7 8f 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+		"RQ750_expectResult":"f7 8f 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+		"AAHA0B0_expectResult":"f7 8f 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+		"ODIN_expectResult":"f7 8b 00 00 00 00 00 00 00 00 00 00 00 00 00 00"
+	},
+
+"GetOemNetFnIanaSupportChannel1NetFn2e":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get OEM NetFn IANA support on channel 0x01, NetFn 0x2e with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x64 0x01 0x2e 0x00",
+		"expectResult":"80 02 ff ff ff",
+		"RQ750_expectResult":"80 02 ff ff ff",
+		"AAHA0B0_expectResult":"80 02 ff ff ff",
+		"ODIN_expectResult":"80 12 4d 4f 00"
+	},
+
+"TestWatchDogTimer":
+	{
+		"platform":"ANY",
+		"description":"Set watchdog timer to do power cycle countdown for 4.8s then reset it.\n Check SEL about watchdog timer event to ensure the behavior.",
+		"testType":"IPMI",
+		"testmethod":"doWatchDogTimer",
+		"interface":"LAN"
+	},
+
+"TestWatchDogTimer_Lanplus":
+	{
+		"platform":"ANY",
+		"description":"Set watchdog timer to do power cycle countdown for 4.8s then reset it.\n Check SEL about watchdog timer event to ensure the behavior.\n Test it via lanplus interface.",
+		"testType":"IPMI",
+		"testmethod":"doWatchDogTimer",
+		"interface":"LANPLUS"
+	},
+
+"TestSetBmcGlobalEnables":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set BMC global enables (in-band)",
+		"testType":"MANUAL"
+	},
+
+"TestGetBmcGlobalEnables":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get BMC global enables with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x2f",
+		"expectResult":"09",
+		"RQ750_expectResult":"09",
+		"AAHA0B0_expectResult":"09",
+		"ODIN_expectResult":"08"
+	},
+
+"TestClearMessageFlags":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command clear message flags (in-band)",
+		"testType":"MANUAL"
+	},
+
+"TestGetMessageFlags":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get message flags (in-band)",
+		"testType":"MANUAL"
+	},
+
+"TestEnableMessageChannelReceive":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command enable message channel receive (in-band)",
+		"testType":"MANUAL"
+	},
+
+"TestGetSysmGuid":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get system GUID with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x37",
+		"expectResult":"c0 02 04 05 2f 00 92 03 00 10 d2 1d 6c 3f 79 23",
+		"AAHA0B0_expectResult":"c0 02 04 05 2f 00 92 03 00 10 d2 1d 6c 3f 79 23",
+		"ODIN_expectResult":"ad b2 6b 8d f9 73 aa 44 ad e7 94 e5 2d 42 68 d0"
+	},
+
+"TestSetSysInfoParameters":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set system info parameters.\n Check setting then recover it.",
+		"testType":"IPMI",
+		"testmethod":"doSetSysInfoParameters",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x58 0x00",
+		"data":"0x00",
+		"getCmd":"0x59 0x00 0x00 0x00 0x00"
+	},
+
+"TestGetSysInfoParameters":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get system info parameters with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x59 0x00 0x00 0x00 0x00",
+		"expectResult":"11 00",
+		"ODIN_expectResult":"11 00"
+	},
+
+"TestGetChannelAuthCapability":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get channel authentication capability with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x38 0x01 0x01",
+		"expectResult":"01 04 14 00 00 00 00 00",
+		"AAHA0B0_expectResult":"01 04 14 00 00 00 00 00",
+		"ODIN_expectResult":"01 00 04 00 00 00 00 00"
+	},
+
+"ShowActivateSession":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line session info active",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LAN",
+		"cmd":"session info active"
+	},
+
+"TestSetSessionPrivilegeLevel":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command line set privlvl user",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LAN",
+		"cmd":"set privlvl user"
+	},
+
+"TestCloseSession":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command Close Session via BITS tool",
+		"testType":"MANUAL"
+	},
+
+"TestGetSessionInfo":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get session info with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x3d 0x00",
+		"expectResult":"af 24 01 02 04 01 0a 6d 24 a9 ec f4 bb 5c a6 bd b8 1e",
+		"AAHA0B0_expectResult":"af 24 01 02 04 01 0a 6d 24 a9 ec f4 bb 5c a6 bd b8 1e",
+		"ODIN_expectResult":"30 09 01 02 04 01 0a 6d 24 a9 ec f4 bb 5c a6 bd 1b ed"
+	},
+
+"ShowGetSessionInfo":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line get session info",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LAN",
+		"cmd":"session info active"
+	},
+
+"TestSetChannelAccess":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set channel access.\n Check setting then recover it.",
+		"testType":"IPMI",
+		"testmethod":"doSetCmdCheckRecover",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x40 0x01",
+		"data":"0x02 0x04",
+		"getCmd":"0x41 0x01 0x40"
+	},
+
+"TestGetChannelAccess":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get channel access with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x41 0x01 0x40",
+		"expectResult":"12 04",
+		"AAHA0B0_expectResult":"12 04",
+		"ODIN_expectResult":"02 04"
+	},
+
+"TestGetChannelInfo":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get channel info with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x42 0x01",
+		"expectResult":"01 04 01 81 f2 1b 00 00 00",
+		"AAHA0B0_expectResult":"01 04 01 81 f2 1b 00 00 00",
+		"ODIN_expectResult":"01 04 01 81 f2 1b 00 00 00"
+	},
+
+"ShowGetChannelInfo":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line get channel info",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LAN",
+		"cmd":"channel info 1"
+	},
+
+"TestSetUserAccess":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command line set user access then recover it",
+		"testType":"IPMI",
+		"testmethod":"doSetCmdLineSetRecover",
+		"interface":"LAN",
+		"cmd":"channel setaccess 1 3 callin=off ipmi=on link=on privilege=1",
+		"setCmd":"channel setaccess 1 3 callin=on ipmi=off link=off privilege=15"
+	},
+
+"ShowGetUserAccess":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line get user access",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LAN",
+		"cmd":"channel getaccess 1 3"
+	},
+
+"TestSetUserName":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set user name.\n Check setting then recover it.",
+		"testType":"IPMI",
+		"testmethod":"doSetCmdCheckRecover",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x45 0x03",
+		"data":"0x61 0x64 0x6d 0x69 0x6e 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00",
+		"getCmd":"0x46 0x03"
+	},
+
+"TestGetUserName":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get user name with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x46 0x02",
+		"expectResult":"61 64 6d 69 6e 00 00 00 00 00 00 00 00 00 00 00",
+		"AAHA0B0_expectResult":"61 64 6d 69 6e 00 00 00 00 00 00 00 00 00 00 00",
+		"ODIN_expectResult":"55 53 45 52 49 44 00 00 00 00 00 00 00 00 00 00"
+	},
+
+"TestSetUserPassword":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set user password and login BMC",
+		"testType":"IPMI",
+		"testmethod":"doSetUserPasswordLogin",
+		"interface":"LAN"
+	},
+
+"TestActivatePayload":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command activate payload",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x48"
+	},
+
+"TestDeactivatePayload":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command deactivate payload",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x49"
+	},
+
+"TestGetPayloadActivationStatus":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get payload activation status with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x4a 0x01",
+		"expectResult":"0f 00 00",
+		"AAHA0B0_expectResult":"0f 00 00",
+		"ODIN_expectResult":"01 00 00"
+	},
+
+"TestGetPayloadInstanceInfo":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get payload instance info with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x4b 0x01 0x01",
+		"expectResult":"00 00 00 00 00 00 00 00 00 00 00 00",
+		"AAHA0B0_expectResult":"00 00 00 00 00 00 00 00 00 00 00 00",
+		"ODIN_expectResult":"00 00 00 00 01 00 00 00 00 00 00 00"
+	},
+
+"TestSetUserPayloadAccess":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command set user payload access",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x4c 0x01 0x03 0x00 0x00 0x00 0x00"
+	},
+
+"TestGetUserPayloadAccess":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get user payload access with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x4d 0x01 0x01",
+		"expectResult":"02 00 00 00",
+		"AAHA0B0_expectResult":"02 00 00 00",
+		"ODIN_expectResult":"02 00 00 00"
+	},
+
+"TestGetChannelPayloadSupport":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get channel payload support with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x4e 0x01",
+		"expectResult":"03 00 00 00 00 00 00 00",
+		"AAHA0B0_expectResult":"03 00 00 00 00 00 00 00",
+		"ODIN_expectResult":"03 00 3f 00 00 00 00 00"
+	},
+
+"TestGetChannelPayloadVersion":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get channel payload version with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x4f 0x01 0x00",
+		"expectResult":"10",
+		"AAHA0B0_expectResult":"10",
+		"ODIN_expectResult":"10"
+	},
+
+"TestGetChannelOemPayloadInfo":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get channel OEM payload info with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x50 0x01 0x00 0x00 0x00 0x00 0x00 0x00",
+		"expectResult":"00 00 00 00 00 00 10",
+		"AAHA0B0_expectResult":"00 00 00 00 00 00 10"
+	},
+
+"ShowGetChannelCipherSuites":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line get channel cipher suites",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LAN",
+		"cmd":"channel getciphers ipmi 1"
+	},
+
+"TestSuspend_ResumePayloadEncryption":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command suspend resume payload encryption",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x55 0x01 0x01 0x00"
+	},
+
+"TestSetChannelSecurityKeys":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set channel security keys",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x56 0x01 0x00 0x00",
+		"expectResult":"02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+		"AAHA0B0_expectResult":"02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+		"ODIN_expectResult":"02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"
+	},
+
+"TestGetChassisCapabilities":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get chassis capabilities with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x00",
+		"cmd":"0x00",
+		"expectResult":"00 20 20 20 20 20",
+		"AAHA0B0_expectResult":"00 20 20 20 20 20",
+		"ODIN_expectResult":"00 20 20 20 20 20"
+	},
+
+"TestGetChassisCapabilities_Lanplus":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get chassis capabilities with expect Result via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LANPLUS",
+		"netfn":"0x00",
+		"cmd":"0x00",
+		"expectResult":"00 20 20 20 20 20",
+		"AAHA0B0_expectResult":"00 20 20 20 20 20",
+		"ODIN_expectResult":"00 20 20 20 20 20"
+	},
+
+"ShowChassisStatus":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line chassis status",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LAN",
+		"cmd":"chassis status"
+	},
+
+"ShowChassisStatus_Lanplus":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line chassis status via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LANPLUS",
+		"cmd":"chassis status"
+	},
+
+"TestPowerUp":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI chassis control command to do power up.\nCheck chassis status to ensure behavior.",
+		"testType":"IPMI",
+		"testmethod":"doPowerUp",
+		"interface":"LAN"
+	},
+
+"TestPowerUp_Lanplus":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI chassis control command to do power up.\nCheck chassis status to ensure behavior.\n Test it via lanplus interface.",
+		"testType":"IPMI",
+		"testmethod":"doPowerUp",
+		"interface":"LANPLUS"
+	},
+
+"TestPowerDown":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI chassis control command to do power down.\nCheck chassis status to ensure behavior.",
+		"testType":"IPMI",
+		"testmethod":"doPowerDown",
+		"interface":"LAN"
+	},
+
+"TestPowerDown_Lanplus":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI chassis control command to do power down.\nCheck chassis status to ensure behavior.\n Test it via lanplus interface.",
+		"testType":"IPMI",
+		"testmethod":"doPowerDown",
+		"interface":"LANPLUS"
+	},
+
+"TestPowerCycle":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI chassis control command to do power cycle.\nCheck SEL to ensure behavior.",
+		"testType":"IPMI",
+		"testmethod":"doPowerCycle",
+		"interface":"LAN"
+	},
+
+"TestPowerCycle_Lanplus":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI chassis control command to do power cycle.\nCheck SEL to ensure behavior.\n Test it via lanplus interface.",
+		"testType":"IPMI",
+		"testmethod":"doPowerCycle",
+		"interface":"LANPLUS"
+	},
+
+"TestHardReset":
+	{
+		"platform":"AAHA0B0",
+		"description":"Test IPMI chassis control command to do hard test.\nCheck SEL to ensure behavior.",
+		"testType":"IPMI",
+		"testmethod":"doHardReset",
+		"interface":"LAN"
+	},
+
+"ShowChassisIdentify":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line chassis identify",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LAN",
+		"cmd":"chassis identify"
+	},
+
+"ShowChassisIdentify_Lanplus":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line chassis identify via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LANPLUS",
+		"cmd":"chassis identify"
+	},
+
+"TestSetFrontPanelButtonEnables":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set front panel button enables",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x00",
+		"cmd":"0x0a 0x00"
+	},
+
+"TestSetChassisCapabilities":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set chassis capabilities.\n Check setting then recover it.",
+		"testType":"IPMI",
+		"testmethod":"doSetCmdCheckRecover",
+		"interface":"LAN",
+		"netfn":"0x00",
+		"cmd":"0x05",
+		"data":"0x00 0x20 0x20 0x20 0x20 0x20",
+		"getCmd":"0x00"
+	},
+
+"TestSetPowerRestorePolicy":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set power restore policy",
+		"testType":"MANUAL"
+	},
+
+"TestSetPowerCycleInterval":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set power cycle interval",
+		"testType":"MANUAL"
+	},
+
+"ShowSystemRestartCause":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line system restart_cause",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LAN",
+		"cmd":"chassis restart_cause"
+	},
+
+"ShowSystemRestartCause_Lanplus":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line system restart_cause via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LANPLUS",
+		"cmd":"chassis restart_cause"
+	},
+
+"TestSetSystemBootOptions":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set system boot options",
+		"testType":"MANUAL"
+	},
+
+"TestGetSystemBootOptions":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get system boot options with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x00",
+		"cmd":"0x09 0x00 0x00 0x00",
+		"expectResult":"01 00 00",
+		"AAHA0B0_expectResult":"01 00 00",
+		"ODIN_expectResult":"01 00 00"
+	},
+
+"TestGetSystemBootOptions_Lanplus":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get system boot options with expect Result via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LANPLUS",
+		"netfn":"0x00",
+		"cmd":"0x09 0x00 0x00 0x00",
+		"expectResult":"01 00 00",
+		"AAHA0B0_expectResult":"01 00 00",
+		"ODIN_expectResult":"01 00 00"
+	},
+
+"ShowPohCounter":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line POH counter",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LAN",
+		"cmd":"chassis poh"
+	},
+
+"ShowPohCounter_Lanplus":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line POH counter via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LANPLUS",
+		"cmd":"chassis poh"
+	},
+
+"TestSetEventReceiver":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set event receiver.\n Check setting then recover it.",
+		"testType":"IPMI",
+		"testmethod":"doSetCmdCheckRecover",
+		"interface":"LAN",
+		"netfn":"0x04",
+		"cmd":"0x00",
+		"data":"0x20 0x00",
+		"getCmd":"0x01"
+	},
+
+"TestSetEventReceiver_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set event receiver via lanplus interface.\n Check setting then recover it.",
+		"testType":"IPMI",
+		"testmethod":"doSetCmdCheckRecover",
+		"interface":"LANPLUS",
+		"netfn":"0x04",
+		"cmd":"0x00",
+		"data":"0x20 0x00",
+		"getCmd":"0x01"
+	},
+
+"TestGetEventReceiver":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get event receiver with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x04",
+		"cmd":"0x01",
+		"expectResult":"20 00",
+		"AAHA0B0_expectResult":"20 00",
+		"ODIN_expectResult":"20 00"
+	},
+
+"TestGetEventReceiver_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get event receiver via lanplus interface with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LANPLUS",
+		"netfn":"0x04",
+		"cmd":"0x01",
+		"expectResult":"20 00",
+		"AAHA0B0_expectResult":"20 00",
+		"ODIN_expectResult":"20 00"
+	},
+
+"TestPlatEvent":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line set event receiver",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LAN",
+		"cmd":"sel list"
+	},
+
+"TestPlatEvent_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line set event receiver via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LANPLUS",
+		"cmd":"sel list"
+	},
+
+"TestGetPEFCapabilities":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get PEF capabilities with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x04",
+		"cmd":"0x10",
+		"expectResult":"51 3f 28",
+		"AAHA0B0_expectResult":"51 3f 28",
+		"ODIN_expectResult":"51 3f 10"
+	},
+
+"TestGetPEFCapabilities_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get PEF capabilities with expect Result via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LANPLUS",
+		"netfn":"0x04",
+		"cmd":"0x10",
+		"expectResult":"51 3f 28",
+		"AAHA0B0_expectResult":"51 3f 28",
+		"ODIN_expectResult":"51 3f 10"
+	},
+
+"TestArmPEFPostponeTimer":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command arm PEF postpone time",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x04",
+		"cmd":"0x11 0x00"
+	},
+
+"TestArmPEFPostponeTimer_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command arm PEF postpone time via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LANPLUS",
+		"netfn":"0x04",
+		"cmd":"0x11 0x00"
+	},
+
+"TestSetPEFConfPara":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set PEF configuration parameters. \n Check setting then recover it.",
+		"testType":"IPMI",
+		"testmethod":"doSetPEFConfPara",
+		"interface":"LAN",
+		"netfn":"0x04",
+		"cmd":"0x12 0x00",
+		"data":"0x00",
+		"getCmd":"0x13 0x00 0x00 0x00"
+	},
+
+"TestSetPEFConfPara_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set PEF configuration parameters via lanplus interface. \n Check setting then recover it.",
+		"testType":"IPMI",
+		"testmethod":"doSetPEFConfPara",
+		"interface":"LANPLUS",
+		"netfn":"0x04",
+		"cmd":"0x12 0x00",
+		"data":"0x00",
+		"getCmd":"0x13 0x00 0x00 0x00"
+	},
+
+"TestGetPEFConfPara":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get PEF configuration parameters with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x04",
+		"cmd":"0x13 0x00 0x00 0x00",
+		"expectResult":"11 00",
+		"ODIN_expectResult":"11 00"
+	},
+
+"TestGetPEFConfPara_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get PEF configuration parameters with expect Result via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LANPLUS",
+		"netfn":"0x04",
+		"cmd":"0x13 0x00 0x00 0x00",
+		"expectResult":"11 00",
+		"ODIN_expectResult":"11 00"
+	},
+
+"TestSetLastProcessedEventID":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set last processed event ID",
+		"testType":"MANUAL"
+	},
+
+"TestSetLastProcessedEventID_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set last processed event ID via lanplus interface",
+		"testType":"MANUAL"
+	},
+
+"TestGetLastProcessedEventID":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get last processed event ID",
+		"testType":"MANUAL"
+	},
+
+"TestGetLastProcessedEventID_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get last processed event ID via lanplus interface",
+		"testType":"MANUAL"
+	},
+
+"TestPETAck":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command PET Acknowledge",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestPETAck_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command PET Acknowledge via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestGetSensorReadingFactors":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get sensor reading factors",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x04",
+		"cmd":"0x23 0x01 0x01"
+	},
+
+"TestSetSensorHysteresis":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set sensor hysteresis.\n Check setting then recover it.",
+		"testType":"IPMI",
+		"testmethod":"doSetCmdCheckRecover",
+		"interface":"LAN",
+		"netfn":"0x04",
+		"cmd":"0x24 0x01 0xff",
+		"data":"0x00 0x00",
+		"getCmd":"0x25 0x01 0xff"
+	},
+
+"TestGetSensorHysteresis":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get sensor hysteresis",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x04",
+		"cmd":"0x25 0x01 0xff"
+	},
+
+"TestSetSensorThresholds":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set sensor thresholds.\n Check setting then recover it.",
+		"testType":"IPMI",
+		"testmethod":"doSetCmdCheckRecover",
+		"interface":"LAN",
+		"netfn":"0x04",
+		"cmd":"0x26 0x01",
+		"data":"0x18 0x00 0x00 0x00 0x2a 0x2f 0x00",
+		"getCmd":"0x27 0x01"
+	},
+
+"TestGetSensorThresholds":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get sensor thresholds",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x04",
+		"cmd":"0x27 0x01"
+	},
+
+"TestSetSensorEventEnable":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set sensor event enable.\n Check setting then recover it.",
+		"testType":"IPMI",
+		"testmethod":"doSetCmdCheckRecover",
+		"interface":"LAN",
+		"netfn":"0x04",
+		"cmd":"0x28 0x01",
+		"data":"0xc0 0x80 0x02 0x80 0x02",
+		"getCmd":"0x29 0x01"
+	},
+
+"TestGetSensorEventEnable":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get sensor event enable",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x04",
+		"cmd":"0x29 0x01"
+	},
+
+"TestReArmSensorEvent":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command re-arm sensor event",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x04",
+		"cmd":"0x2a 0x01 0x00"
+	},
+
+"TestGetSensorEventStatus":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get sensor event status",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x04",
+		"cmd":"0x2b 0x01"
+	},
+
+"TestGetSensorReading":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get sensor reading",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x04",
+		"cmd":"0x2d 0x01"
+	},
+
+"TestSetSensorReadingAndEventStatus":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set sensor reading and event status",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x04",
+		"cmd":"0x30 0x01 0x00 0x00"
+	},
+
+"TestGetFRUInventoryAreaInfo":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get FRU inventory area info with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x0a",
+		"cmd":"0x10 0x00",
+		"expectResult":"00 02 00",
+		"AAHA0B0_expectResult":"00 02 00",
+		"ODIN_expectResult":"60 04 00"
+	},
+
+"TestReadFRUData":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command read FRU data with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x0a",
+		"cmd":"0x11 0x00 0x00 0x00 0x01",
+		"expectResult":"01 01",
+		"AAHA0B0_expectResult":"01 01",
+		"ODIN_expectResult":"01 01"
+	},
+
+"TestWriteFRUData":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestGetSDRReposInfo":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get SDR repository info with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x0a",
+		"cmd":"0x20",
+		"expectResult":"51 63 00 a0 13 00 00 00 00 00 00 00 00 27",
+		"AAHA0B0_expectResult":"51 63 00 a0 13 00 00 00 00 00 00 00 00 27",
+		"ODIN_expectResult":"51 15 01 3a 56 00 00 00 00 00 00 00 00 2f"
+	},
+
+"TestGetSDRReposAllcoInfo":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get SDR repository allocation info with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x0a",
+		"cmd":"0x21",
+		"expectResult":"7f 02 10 00 3a 01 3a 01 08",
+		"AAHA0B0_expectResult":"7f 02 10 00 3a 01 3a 01 08",
+		"ODIN_expectResult":"fc 07 10 00 63 05 63 05 04"
+	},
+
+"TestReservedSDR":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command reserve SDR.\n Reserve SDR and try to get SDR via reservation ID.\n",
+		"testType":"IPMI",
+		"testmethod":"doReserveSdr",
+		"interface":"LAN"
+	},
+
+"TestGetSDR":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get SDR",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x0a",
+		"cmd":"0x23 0x00 0x00 0x00 0x00 0x00 0xff"
+	},
+
+"TestAddpartialSDR":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestClearSRDRepository":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestGetSRDRepositoryTime":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get SRD repository time",
+		"testType":"IPMI",
+		"testmethod":"doGetSdrTime",
+		"interface":"LAN"
+	},
+
+"TestSetSRDRepositoryTime":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set SRD repository time as current time",
+		"testType":"IPMI",
+		"testmethod":"doSetSdrTime",
+		"interface":"LAN"
+	},
+
+"TestRunInitializationAgent":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command run initialization agent with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x0a",
+		"cmd":"0x2c 0x00",
+		"expectResult":"01",
+		"AAHA0B0_expectResult":"01",
+		"ODIN_expectResult":"01"
+	},
+
+"ShowGetSELInfo":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line get SEL info",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LAN",
+		"cmd":"sel info"
+	},
+
+"ShowGetSELInfo_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line get SEL info via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LANPLUS",
+		"cmd":"sel info"
+	},
+
+"TestReserveSEL":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command reserve SEL.\n Reserve SEL and try to get SEL entry via reservation ID.\n",
+		"testType":"IPMI",
+		"testmethod":"doReserveSel",
+		"interface":"LAN"
+	},
+
+"TestReserveSEL_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command reserve SEL via lanplus interface.\n Reserve SEL and try to get SEL entry via reservation ID.\n",
+		"testType":"IPMI",
+		"testmethod":"doReserveSel",
+		"interface":"LANPLUS"
+	},
+
+"TestGetSELEntry":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get SEL entry",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x0a",
+		"cmd":"0x43 0x00 0x00 0x00 0x00 0x00 0xff"
+	},
+
+"TestGetSELEntry_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get SEL entry via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LANPLUS",
+		"netfn":"0x0a",
+		"cmd":"0x43 0x00 0x00 0x00 0x00 0x00 0xff"
+	},
+
+"TestAddSELEntry":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command add SEL entry",
+		"testType":"IPMI",
+		"testmethod":"doAddSelEntry",
+		"interface":"LAN"
+	},
+
+"TestAddSELEntry_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command add SEL entry via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doAddSelEntry",
+		"interface":"LANPLUS"
+	},
+
+"TestPartialAddSELEntry":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestPartialAddSELEntry_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestClearSEL":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command line clear SEL",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LAN",
+		"cmd":"sel clear"
+	},
+
+"TestClearSEL_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command line clear SEL via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LANPLUS",
+		"cmd":"sel clear"
+	},
+
+"TestGetSELTime":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x0a",
+		"cmd":"0x48"
+	},
+
+"TestGetSELTime_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get SEL time via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LANPLUS",
+		"netfn":"0x0a",
+		"cmd":"0x48"
+	},
+
+"TestSetSELTime":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command  set SEL time as current time",
+		"testType":"IPMI",
+		"testmethod":"doSetSelTime",
+		"interface":"LAN"
+	},
+
+"TestSetSELTime_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set SEL time as current time via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doSetSelTime",
+		"interface":"LANPLUS"
+	},
+
+"CheckConnectIsSharedNic":
+	{
+		"platform":"ODIN",
+		"description":"Connect to shared NIC (eth0) via IPMI command set lan configuration.\n 1. ipmitool raw 0x0C 0x01 0x01 0xC0 0x00\n 2. ifconfig",
+		"testType":"MANUAL"
+	},
+
+"CheckConnectIsDedicatedNic":
+	{
+		"platform":"ODIN",
+		"description":"Connect to dedicated NIC (eth1) via IPMI command set lan configuration.\n 1. ipmitool raw 0x0C 0x01 0x01 0xC0 0x01\n 2. ifconfig",
+		"testType":"MANUAL"
+	},
+
+"TestSetLanConfigParameters":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set lan configuration parameters.\n Check setting then recover it.",
+		"testType":"IPMI",
+		"testmethod":"doSetLanConfig",
+		"interface":"LAN",
+		"netfn":"0x0c",
+		"cmd":"0x01 0x01 0x02",
+		"data":"0x00 0x14 0x14 0x10 0x00",
+		"getCmd":"0x02 0x01 0x02 0x00 0x00"
+	},
+
+"TestSetLanConfigParameters_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set lan configuration parameters via lanplus interface.\n Check setting then recover it.",
+		"testType":"IPMI",
+		"testmethod":"doSetLanConfig",
+		"interface":"LANPLUS",
+		"netfn":"0x0c",
+		"cmd":"0x10 0x02 0x00",
+		"data":"0x00",
+		"getCmd":"0x11 0x02 0x00 0x00 0x00"
+	},
+
+"ShowGetLanConfigParameters":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line lan print",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LAN",
+		"cmd":"lan print 1"
+	},
+
+"ShowGetLanConfigParameters_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Show IPMI command line lan print via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LANPLUS",
+		"cmd":"lan print 1"
+	},
+
+"TestSuspendBmcArps":
+	{
+		"platform":"ANY",
+		"description":"",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestSetIpForIpv4":
+	{
+		"platform":"ANY",
+		"description":"",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestSetIpForIpv6":
+	{
+		"platform":"ANY",
+		"description":"",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestGetIpForIpv4":
+	{
+		"platform":"ANY",
+		"description":"",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestGetIpForIpv6":
+	{
+		"platform":"ANY",
+		"description":"",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestSetSerialConf":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set serial configuration parameter.\n Check setting then recover it.",
+		"testType":"IPMI",
+		"testmethod":"doSetSerialConf",
+		"interface":"LAN",
+		"netfn":"0x0c",
+		"cmd":"0x10 0x02 0x00",
+		"data":"0x00",
+		"getCmd":"0x11 0x02 0x00 0x00 0x00"
+	},
+
+"TestSetSerialConf_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set serial configuration parameter via lanplus interface.\n Check setting then recover it.",
+		"testType":"IPMI",
+		"testmethod":"doSetSerialConf",
+		"interface":"LANPLUS",
+		"netfn":"0x0c",
+		"cmd":"0x10 0x02 0x00",
+		"data":"0x00",
+		"getCmd":"0x11 0x02 0x00 0x00 0x00"
+	},
+
+"TestGetSerialConf":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get serial configuration parameter with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x0c",
+		"cmd":"0x11 0x02 0x00 0x00 0x00",
+		"expectResult":"11 00",
+		"ODIN_expectResult":"11 00"
+	},
+
+"TestGetSerialConf_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get serial configuration parameter via lanplus interface with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LANPLUS",
+		"netfn":"0x0c",
+		"cmd":"0x11 0x02 0x00 0x00 0x00",
+		"expectResult":"11 00",
+		"ODIN_expectResult":"11 00"
+	},
+
+"TestSetSerialMux":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set serial mux with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x0c",
+		"cmd":"0x12 0x02 0x01",
+		"expectResult":"00",
+		"ODIN_expectResult":"00"
+	},
+
+"TestSetSerialMux_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set serial mux via lanplus interface with expect Result",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LANPLUS",
+		"netfn":"0x0c",
+		"cmd":"0x12 0x02 0x01",
+		"expectResult":"00",
+		"ODIN_expectResult":"00"
+	},
+
+"TestGetTAPResponse":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get TAP response code",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x0c",
+		"cmd":"0x13 0x02"
+	},
+
+"TestGetTAPResponse_LANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get TAP response code via lanplus interface",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LANPLUS",
+		"netfn":"0x0c",
+		"cmd":"0x13 0x02"
+	},
+
+"TestSolActivating":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command SOL activating",
+		"testType":"MANUAL"
+	},
+
+"TestSetSolConf":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command set SOL configuration",
+		"testType":"MANUAL"
+	},
+
+"TestGetSolConf":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get SOL configuration",
+		"testType":"MANUAL"
+	},
+
+"TestForceUEFI2Backupband":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestForceUEFI2primarybank":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestGetDCMICapabilities":
+	{
+		"platform":"ANY",
+		"description":"Test DCMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestSetDCMICapabilities":
+	{
+		"platform":"ANY",
+		"description":"Test DCMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestGetDCMIConfParameters":
+	{
+		"platform":"ANY",
+		"description":"Test DCMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestSetDCMIConfParameters":
+	{
+		"platform":"ANY",
+		"description":"Test DCMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestManagementControllerIDString":
+	{
+		"platform":"ANY",
+		"description":"Test DCMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestGetNMVersion":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestGetNMCapability":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestGetNMThermalCapability":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestGetNMCPUDomainCapability":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestGetNMMemoryDomainCapability":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestEnableNMGlobalPolicyControl":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestEnableNMDomainPolicyControl":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestDisableNMPolicy19":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestSetNMPolicy19":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestDisableNMPolicy5":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestSetNMPolicy5":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestDisableNMPolicy8":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestSetNMPolicy8":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestDisableNMPolicy9":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestSetNMPolicy9":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"IPMI",
+		"testmethod":""
+	},
+
+"TestDHCPV6":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"MANUAL"
+	},
+
+"TestStaticIPV6":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"MANUAL"
+	},
+
+"TestWebConnectV6":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"MANUAL"
+	},
+
+"TestSNMPAlertV6":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"MANUAL"
+	},
+
+"TestEMailAlertWithHostName":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"MANUAL"
+	},
+
+"TestEMailAlertWithServerIP":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"MANUAL"
+	},
+
+"TestEnableDisableIPV6":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"MANUAL"
+	},
+
+"TestDHCPV6ForShare":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"MANUAL"
+	},
+
+"TestStaticIPV6ForShare":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"MANUAL"
+	},
+
+"TestWebConnectV6ForShare":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"MANUAL"
+	},
+
+"TestSNMPAlertV6ForShare":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"MANUAL"
+	},
+
+"TestEMailAlertWithHostNameForShare":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"MANUAL"
+	},
+
+"TestEMailAlertWithServerIPForShare":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"MANUAL"
+	},
+
+"TestEnableDisableIPV6ForShare":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"MANUAL"
+	},
+
+"TestDHCPV6ForShareModule":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"MANUAL"
+	},
+
+"TestStaticIPV6ForShareModule":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"MANUAL"
+	},
+
+"TestWebConnectV6ForShareModule":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"MANUAL"
+	},
+
+"TestSNMPAlertV6ForShareModule":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"MANUAL"
+	},
+
+"TestEnableDisableIPV6ForShareModule":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command",
+		"testType":"MANUAL"
+	}
+}

@@ -1,0 +1,44 @@
+{
+
+"TestGetDeviceID":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get device ID",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x01",
+		"expectResult":"20 81 01 14 02 bf f2 1b 00 30 38 01 00 00 00"
+	},
+
+"TestGetDeviceIDByLANPLUS":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get device ID by LAN+",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandExpectValue",
+		"interface":"LANPLUS",
+		"netfn":"0x06",
+		"cmd":"0x01",
+		"expectResult":"33 81 01 14 02 bf f2 1b 92 30 38 01 00 00 12"
+	},
+
+"TestFan1":
+	{
+		"platform":"ANY",
+		"description":"Test fan speed increasing time",
+		"testType":"SPECIFIC",
+		"interface":"LAN",
+		"testmethod":"doFanTest1"
+	},
+
+"StressTestDCCycle":
+	{
+		"platform":"ANY",
+		"description":"Do DC Cycle",
+		"testType":"CYCLE",
+		"interface":"LAN",
+		"testmethod":"doDCCycleTest"
+	}
+}

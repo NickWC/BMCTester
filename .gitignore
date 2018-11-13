@@ -1,0 +1,9 @@
+# ignore pycharm folder
+__pycache__/
+.idea/
+
+# ignore report file
+output/
+
+# ignore download image
+download/

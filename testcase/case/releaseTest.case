@@ -1,0 +1,169 @@
+{
+"FirmwareUpdate":
+	{
+		"platform":"AAHA0B0",
+		"description":"Firmware update via yafuflash",
+		"testType":"SPECIFIC",
+		"testmethod":"doYafuflashUpdateFw"
+	},
+
+"FirmwareUpdate_Odin":
+	{
+		"platform":"ODIN",
+		"description":"Firmware update via iflash",
+		"testType":"SPECIFIC",
+		"testmethod":"doiflashUpdateFw"
+	},
+
+"TestSelList":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command read SEL",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LAN",
+		"cmd":"sel elist"
+	},
+
+"TestSelClear":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command clear SEL",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LAN",
+		"cmd":"sel clear"
+	},
+
+"TestSdrNumber":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command SDR number",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandLine",
+		"interface":"LAN",
+		"cmd":"sdr elist all | wc -l"
+	},
+
+"TestGetMeFwStatus":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command Get ME firmware status",
+		"testType":"IPMI",
+		"testmethod":"doIPMICommandGetMeFw",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x01",
+		"target":"0x2C",
+		"bridge":"0x06",
+		"expectResult":"50 01 03 07 02 21 57 01 00 05 0b 03 15 40 01",
+		"RQ750_expectResult":"50 01 03 07 02 21 57 01 00 05 0b 03 15 40 01",
+		"AAHA0B0_expectResult":"50 01 03 07 02 21 57 01 00 05 0b 03 15 40 01"
+	},
+
+"TestPowerUp":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI chassis control command to do power up.\nCheck chassis status to ensure behavior.",
+		"testType":"IPMI",
+		"testmethod":"doPowerUp"
+	},
+
+"TestPowerDown":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI chassis control command to do power down.\nCheck chassis status to ensure behavior.",
+		"testType":"IPMI",
+		"testmethod":"doPowerDown"
+	},
+
+"TestPowerCycle":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI chassis control command to do power cycle.\nCheck SEL to ensure behavior.",
+		"testType":"IPMI",
+		"testmethod":"doPowerCycle"
+	},
+
+"TestHardReset":
+	{
+		"platform":"AAHA0B0",
+		"description":"Test IPMI chassis control command to do hard test.\nCheck SEL to ensure behavior.",
+		"testType":"IPMI",
+		"testmethod":"doHardReset"
+	},
+
+"TestWatchDogTimer":
+	{
+		"platform":"ANY",
+		"description":"Set watchdog timer to do power cycle countdown for 4.8s then reset it.\n Check SEL about watchdog timer event to ensure the behavior.",
+		"testType":"IPMI",
+		"testmethod":"doWatchDogTimer"
+	},
+
+"TestGetDedicateNicIp":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get lan to get dedicate NIC IP",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x0C",
+		"cmd":"0x02 0x01 0x03 0x00 0x00"
+	},
+
+"TestGetIpShareNIC":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get lan to get share NIC IP",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x0c",
+		"cmd":"0x02 0x08 0x03 0x00 0x00"
+	},
+
+"TestReadAstRegister":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command Read AST Register",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x3a",
+		"cmd":"0x01 0x1e 0x6e 0x20 0x00 0x04"
+	},
+
+"TestGetSystemGuid":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get System GUID",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x37"
+	},
+
+"TestGetDeviceGuid":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get Device GUID",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x06",
+		"cmd":"0x08"
+	},
+
+"TestGetFscMode":
+	{
+		"platform":"ANY",
+		"description":"Test IPMI command get FSC mode",
+		"testType":"IPMI",
+		"testmethod":"doRawIPMICommandShowStatus",
+		"interface":"LAN",
+		"netfn":"0x3c",
+		"cmd":"0x03"
+	}
+}

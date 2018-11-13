@@ -1,0 +1,80 @@
+{
+	"DEVICE1":
+	{
+	"PLATFORM":"AAHA0B0",
+	"BMCLAN":
+		{
+			"IP":"10.109.36.81",
+			"USER":"admin",
+			"PASSWORD":"admin"
+		},
+
+	"TESTPLAN":
+
+		[
+			"planList.list"
+		],
+
+	"IMAGE_SERVER_INFO":
+		{
+			"IP":"10.110.21.22",
+			"USER":"<Your AD account>",
+			"PASSWORD":"< YourAD password>",
+			"ROOT":"RD1",
+			"IMG_PATH":"BMC/Daily_Build"
+		}
+	},
+
+	"DEVICE2":
+	{
+	"PLATFORM":"RQ750",
+	"BMCLAN":
+		{
+			"IP":"10.109.36.64",
+			"USER":"lenovo",
+			"PASSWORD":"len0vO"
+		},
+
+	"TESTPLAN":
+
+		[
+			"planList.list"
+		],
+
+	"IMAGE_SERVER_INFO":
+		{
+			"IP":"10.110.21.22",
+			"USER":"<Your AD account>",
+			"PASSWORD":"< YourAD password>",
+			"ROOT":"RD1",
+			"IMG_PATH":"BMC/Daily_Build"
+		}
+	},
+
+	"DEVICE3":
+	{
+	"PLATFORM":"Odin",
+	"BMCLAN":
+		{
+			"IP":"10.109.36.176",
+			"USER":"USERID",
+			"PASSWORD":"PASSW0RD"
+		},
+
+	"TESTPLAN":
+
+		[
+			"OdinPlan.list"
+		],
+
+	"IMAGE_SERVER_INFO":
+		{
+			"IP":"10.110.21.22",
+			"USER":"<Your AD account>",
+			"PASSWORD":"< YourAD password>",
+			"ROOT":"RD1",
+			"IMG_PATH":"BMC/Daily_Build"
+		}
+	}
+}
+
